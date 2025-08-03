@@ -27,8 +27,11 @@ body::before{
     backdrop-filter: blur(15px);
 } 
 .main-container {
-    width: 800px;
-    height: 500px;
+    width: 1250px;
+    height: 600px;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow: auto;
     z-index: 1;
     background: linear-gradient(to top,rgba(0, 0, 0, 0.15),rgba(255, 255, 255, 0.15));
     border-radius: 20px;
@@ -122,6 +125,7 @@ body::before{
     gap: 15px;
     padding-bottom: 10px;
 }
+
 .forecast-item{
     display: flex;
     min-width: 70px;
@@ -130,6 +134,16 @@ body::before{
     padding: 20px;
     align-items: center;
     border-radius: 10px;
+    margin-top: 30px;
+}
+.forecast-item-temp {
+    font-size: 18px;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
 }
 .forecast-item:hover{
     background: rgba(255, 255, 255, 0.2);
@@ -157,4 +171,11 @@ body::before{
 .section-message h1 {
     font-size: 24px;
     font-weight: 600; 
+}
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: -280px;
 }

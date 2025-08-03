@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="script.js" defer></script>
 </head>
@@ -18,7 +19,7 @@
                 </span>
             </button>
         </header>
-        <section class="weather-info" style="display: none;">
+        <section class="weather-info" >
             <div class="location-date-container">
                <div class="location">
                 <span class="material-symbols-outlined">
@@ -41,7 +42,7 @@
                         water_drop
                     </span>
                     <div class="conditon-info">
-                        <h5 class="regular-text"></h5>
+                        <h5 class="regular-text">Humidity</h5>
                         <h5 class="humidity-value"></h5>
                     </div>
                 </div>
@@ -50,11 +51,13 @@
                         air
                     </span>
                     <div class="conditon-info">
-                        <h5 class="regular-text"></h5>
+                        <h5 class="regular-text">Wind Speed</h5>
                         <h5 class="wind-speed-text"></h5>
                     </div>
                 </div>
             </div>
+            <div>
+            <canvas id="myChart" style="width:2%;max-width:700px" class="chart"></canvas>
             <div class="forecast-items-container">
                 <div class="forecast-item">
                     <h5 class="forecast-item-date regular-text"></h5>
@@ -62,7 +65,7 @@
                     <h5 class="forecast-item-temp"></h5>
                 </div>
                 <div class="forecast-item">
-                    <h5 class="forecast-item-date regular-text">03 Jun</h5>
+                    <h5 class="forecast-item-date regular-text"></h5>
                     <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
                     <h5 class="forecast-item-temp"></h5>
                 </div>
@@ -78,7 +81,7 @@
                 </div>
             </div>
         </section>
-        <section class="search-city section-message">
+        <section class="search-city section-message" style="display: none;">
             <img src="assets/message/search-city.png">
             <div>
                 <h1>Search City</h1>
@@ -87,9 +90,9 @@
                 </h4>
             </div>
         </section>
-        <section class="not-found section-message" style="display: none;">
-            <img src="assets/message/not-found.png">
-            <div>
+        <section class="not-found section-message" style="display: none;" >
+            <img src="assets/message/not-found.png" style="display: none;">
+            <div class="error">
                 <h1>Error</h1>
                 <h4 class="regular-text">
                     Enter a valid city name to get the weather information.

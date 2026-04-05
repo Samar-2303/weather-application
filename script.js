@@ -94,7 +94,7 @@ async function updateForecastInfo(city) {
 
     forecastItemsContainer.innerHTML = '';
     forecastData.list.forEach(forecastWeather => {
-        if (forecastWeather.dt_txt.includes(timeTaken) && !forecastWeather.dt_txt.includes(todayDate)) {
+        if (forecastWeather.dt_txt.includes(timeTaken)) {
             updateForecastItems(forecastWeather);
 
             const dateTaken = new Date(forecastWeather.dt_txt);
